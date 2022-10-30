@@ -1,5 +1,5 @@
 # A program to decode NEC IR remote keys using MicroPython based embedded development boards( This code was tested on a Raspberry Pi Pico)
-#visit->https://techdocs.altium.com/display/FPGA/NEC+Infrared+Transmission+Protocol   for information about NEC Infrared Transmission Protocol
+#visit->  https://techdocs.altium.com/display/FPGA/NEC+Infrared+Transmission+Protocol   for information about NEC Infrared Transmission Protocol
 # See the messeage frame of the protocol for better understanding of the code
 from machine import Pin                           
 import math
@@ -35,10 +35,9 @@ while True:
          print (value,pulselen)
     print ("****END****\n")
     print ("size of array is"+str(len(command)))
-    binaryString = "".join(map(lambda x: "1" if x[1] > 1000 else "0", filter(lambda x: x[0] == 1, command)))
+    binaryString = "".join(map(lambda x: "1" if x[1] > 1000 else "0", filter(lambda x: x[0] == 1, command)))     #Binary value of the pressed key
     print(binaryString)
-    
-    if binaryString=="10000000111111110111110000000011111":
+    if binaryString=="10000000111111110111110000000011111":          #To toggle the LED 
         output.on()
         count+=1
     if count>1:
