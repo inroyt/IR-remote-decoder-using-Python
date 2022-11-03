@@ -1,6 +1,6 @@
 # A program to decode NEC IR remote keys using MicroPython based embedded development boards( This code was tested on a Raspberry Pi Pico)
 #visit->  https://techdocs.altium.com/display/FPGA/NEC+Infrared+Transmission+Protocol   for information about NEC Infrared Transmission Protocol
-# See the messeage frame of the protocol for better understanding of the code
+# See the message frame of the protocol for better understanding of the code
 from machine import Pin                           
 import math
 import utime
